@@ -12,11 +12,7 @@ class CheckerBoard
 private:
 	vector<vector<int>> grid;
 	int size;
-	struct Vector2
-	{
-		int row;
-		int col;
-	};
+	struct Vector2;
 	static int tileNo;
 	
 public:
@@ -37,12 +33,14 @@ public:
 
 
 private:
-	static void printArray(int[], int);
 	/// <summary>
 	/// fill the grid with RT tiling 
 	/// </summary>
 	void generateRTTiling(int missingRow, int missingCol, int range);
-	void fillCenterRT(int dRow, int dCol, int missingX, int missingY, int range);
+	Vector2& findQuarter(int missingRow, int range, int missingCol);
+	void fill2(int missingRow, int missingCol);
+	void fillCorners(CheckerBoard::Vector2& quarter, int range, int dRow, int dCol, int missingX, int missingY);
+	void fillCenterRT(int dRow, int dCol, Vector2 quarter, int range);
 	static void incTileNo();
 	static void copyTile(const CheckerBoard& from, CheckerBoard& to, int row, int col);
 };

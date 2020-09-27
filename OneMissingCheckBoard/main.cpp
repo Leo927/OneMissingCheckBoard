@@ -16,11 +16,33 @@
 
 int main()
 {
-    CheckerBoard board = CheckerBoard::fromRT(4, 1, 1);
-    cout << "final result:\n";
-    board.print();
+    string command;
+    while (command !="exit")
+    {
+        cout << "please enter a command:\n";
+        cout << "   build: build the tilemap with right triminoes\n";
+        cout << "   exit: exit the program\n";
+        cin >> command;
+        if (command == "build")
+        {
+            int n;
+            int row;
+            int col;
+            cout << "please enter n, row of the missing tile, col of the missing tile\n";
+            cout << "seperated by space\n";
+            cin >> n;
+            cin >> row;
+            cin >> col;
+            CheckerBoard board = CheckerBoard::fromRT(pow(2,n), row, col);
+            board.print();
+        }
+    }
+    
+    
     //board.clean();
 }
+
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
