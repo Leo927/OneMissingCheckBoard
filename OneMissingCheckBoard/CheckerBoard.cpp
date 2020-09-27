@@ -14,13 +14,13 @@ CheckerBoard CheckerBoard::fromRT(int n, int missingX, int missingY)
 	if (_size <= 0)
 	{
 		cout << "Fatal error: invalid size\n";
-		abort();
+		return NULL;
 	}
 	if (missingX > _size - 1 ||
 		missingY > _size - 1)
 	{
 		cout << "Fatal error: invalid missing tile position\n";
-		abort();
+		return NULL;
 	}
 	CheckerBoard board = CheckerBoard(_size);
 	board.generateRTTiling(missingX, missingY, _size);
