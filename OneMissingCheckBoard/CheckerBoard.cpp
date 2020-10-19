@@ -45,11 +45,12 @@ int CheckerBoard::getSize() const
 
 void CheckerBoard::print() const
 {
+	int maxLength = to_string(tileNo).size() + 2;
 	for (int i = 0; i < this->size; i++)
 	{
 		for (int j = 0; j < size; j++)
 		{
-			cout << grid[i][j] << " ";
+			cout << setw(maxLength)<< grid[i][j];
 		}
 		cout << endl;
 	}
@@ -185,9 +186,7 @@ void CheckerBoard::fillCenterRT(int dRow, int dCol, Vector2 quarter, int range)
 
 void CheckerBoard::incTileNo()
 {
-	tileNo = (tileNo + 1) % 9;
-	if (tileNo <= 0)
-		tileNo = 1;
+	tileNo++;
 }
 
 void CheckerBoard::copyTile(const CheckerBoard& from, CheckerBoard& to, int dX, int dY)

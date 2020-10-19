@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <cassert>
 #include <vector>
+#include <iomanip>
+#include <string>
 /*
 * need a static method that returns a checkerboard made of 
 */
