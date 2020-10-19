@@ -10,7 +10,7 @@ using namespace std;
 class CheckerBoard
 {
 private:
-	vector<vector<int>> grid;
+	vector<vector<int> > grid;
 	int size;
 	struct Vector2;
 	static int tileNo;

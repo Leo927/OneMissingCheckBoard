@@ -12,7 +12,9 @@
 *   2. Displayer, currently using only console and txt. maybe use .csv
 */
 #include <iostream>
+#include <math.h> 
 #include "CheckerBoard.h"
+
 
 int main()
 {
