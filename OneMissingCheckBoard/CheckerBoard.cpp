@@ -45,7 +45,7 @@ int CheckerBoard::getSize() const
 
 void CheckerBoard::print() const
 {
-	int maxLength = to_string(tileNo).size() + 2;
+	int maxLength = log10(tileNo) + 2;
 	for (int i = 0; i < this->size; i++)
 	{
 		for (int j = 0; j < size; j++)
@@ -54,6 +54,7 @@ void CheckerBoard::print() const
 		}
 		cout << endl;
 	}
+	tileNo = 1;
 }
 
 /*
